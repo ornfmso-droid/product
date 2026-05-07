@@ -1,41 +1,107 @@
+:root {
+  --bg-color: #f0f0f2;
+  --container-bg: #ffffff;
+  --text-color: #333333;
+  --btn-bg: #4a90e2;
+  --btn-text: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.dark {
+  --bg-color: #1a1a1a;
+  --container-bg: #2d2d2d;
+  --text-color: #f0f0f0;
+  --btn-bg: #357abd;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
 body {
-  font-family: sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f0f0f0;
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
   text-align: center;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--container-bg);
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  width: 90%;
+  max-width: 400px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-weight: 700;
 }
 
 #generate-btn {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
   cursor: pointer;
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border: none;
+  border-radius: 12px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+#generate-btn:active {
+  transform: scale(0.95);
 }
 
 #numbers-container {
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2rem;
+  min-height: 50px;
 }
 
 .number {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  margin: 0 0.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  animation: pop 0.3s ease-out forwards;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  padding: 10px;
+  border-radius: 50%;
+  background-color: var(--container-bg);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
 }

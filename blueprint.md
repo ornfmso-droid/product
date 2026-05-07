@@ -1,22 +1,28 @@
+# 로또 번호 추첨기 (Lotto Number Generator)
 
-# Lotto Number Generator
+## 개요
+이 애플리케이션은 사용자에게 무작위로 생성된 6개의 로또 번호(1-45)를 제공합니다. 현대적이고 직관적인 UI/UX를 통해 즐거운 사용자 경험을 제공하며, 다크 모드와 라이트 모드를 모두 지원합니다.
 
-## Overview
+## 주요 기능
+- **번호 생성**: 버튼을 클릭하면 1부터 45 사이의 중복되지 않는 6개의 숫자를 무작위로 생성합니다.
+- **자동 정렬**: 생성된 번호는 오름차순으로 자동 정렬되어 표시됩니다.
+- **색상 구분**: 번호 대역별로 공식 로또 색상(노랑, 파랑, 빨강, 회색, 초록)을 적용하여 시각적 편의를 제공합니다.
+- **다크/라이트 모드**: 사용자의 선호에 따라 테마를 전환할 수 있으며, 설정은 브라우저에 저장됩니다.
+- **애니메이션 효과**: 번호가 생성될 때 순차적으로 나타나는 팝업 애니메이션을 적용했습니다.
 
-This project is a simple web application that generates and displays random lotto numbers. It is built with HTML, CSS, and JavaScript, and it is designed to be a fun and easy-to-use tool for anyone who wants to try their luck at the lottery.
+## 디자인 및 스타일
+- **현대적인 레이아웃**: 중앙 집중형 컨테이너와 부드러운 그림자 효과를 사용하여 깔끔한 느낌을 줍니다.
+- **반응형 디자인**: 모바일과 데스크탑 환경 모두에서 최적화된 화면을 제공합니다.
+- **타이포그래피**: 가독성이 높은 Pretendard 폰트 시스템을 기반으로 디자인되었습니다.
+- **테마 시스템**:
+  - **라이트 모드**: 깨끗한 흰색 배경과 부드러운 회색 톤.
+  - **다크 모드**: 눈의 피로를 줄여주는 어두운 회색 배경과 대비되는 텍스트.
 
-## Design and Features
-
-*   **Modern Design:** The application has a clean and modern design that is easy on the eyes and intuitive to use.
-*   **Responsive Layout:** The layout is responsive and adapts to different screen sizes, so it works well on both desktop and mobile devices.
-*   **Interactive Elements:** The application includes interactive elements, such as a button to generate numbers, to make the user experience more engaging.
-*   **Color-Coded Numbers:** The generated numbers are color-coded to make them easier to read and distinguish.
-
-## Current Request
-
-**Request:** Localize the website to Korean.
-
-**Plan:**
-
-1.  Update the `index.html` file to change the language to Korean.
-2.  Update the `blueprint.md` file to reflect the changes.
+## 구현 상세 (Plan & Steps)
+1.  **테마 변수 설정**: CSS Variables(`:root`)를 사용하여 배경색, 텍스트색 등을 관리.
+2.  **UI 구성**: `index.html`에 테마 전환 버튼과 번호 표시 영역 추가.
+3.  **로직 구현**:
+    - `Math.random()`을 이용한 번호 생성 및 `Set` 객체를 통한 중복 제거.
+    - `localStorage`를 활용한 사용자 테마 설정 유지.
+    - `setTimeout`을 활용한 순차적 애니메이션 구현.
+4.  **배포**: Git을 통해 GitHub 저장소에 코드를 업로드하고 관리.
